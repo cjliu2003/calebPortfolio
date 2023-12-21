@@ -1,6 +1,6 @@
 import './App.css';
 import  {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import { About, Footer, Home, Navbar, Projects } from './containers';
+import { About, Footer, Home, Navbar, Projects, Timeline } from './containers';
 
 function App() {
   return (
@@ -28,6 +28,13 @@ function App() {
           <Footer />
           </div>
         }/>
+        <Route path="/timeline" element={
+          <div>
+          <Navbar />
+          <Timeline />
+          <Footer />
+          </div>
+        }/> 
       </Routes>
     </Router>
   );
