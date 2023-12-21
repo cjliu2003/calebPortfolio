@@ -1,0 +1,241 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    background: #FFFFFF;
+    z-index: 5;
+    width: 100%;
+}
+.content {
+    height: 92px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+    min-height: 75px;
+}
+
+.menu h1 {
+    font-size: 16px;
+    font-weight: 500;
+    transition: 250ms ease-in;
+    padding: 1rem;
+}
+
+.menu h1:hover + .options {
+    visibility: visible;   
+}
+
+
+.link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link-line {
+    height: 4px;
+    background: var(--primary-blue);
+    border: none;
+    width: 40px;
+    margin-top: -4px;
+}
+
+
+.sign, .profile {
+    display: none;
+}
+
+.sign a {
+    margin: 0 0.5rem 0;
+    padding: 0.5rem 1rem;
+    
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#signup-button, #signin-button {
+    border-radius: 5px;
+    max-width: 200px;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 1rem 1rem 0;
+    cursor: pointer;
+    align-items: center;
+}
+#signup-button {
+    background: var(--primary-blue);
+    color: white;
+}
+#signin-button {
+    border: 3px var(--primary-blue) solid;
+    color: var(--primary-blue);
+}
+
+#hamburger {
+    display: block;
+    position: relative;
+    z-index: 2;
+
+    user-select: none;
+
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+#hamburger span {
+    display: block;
+    width: 28px;
+    height: 2px;
+    margin-bottom: 5px;
+    position: relative;
+    
+    background-color: black;
+    border-radius: 6px;
+    z-index: 2;
+
+    transform-origin: 0 0;
+    transition: 400ms;
+}
+
+#hamburger:hover span:nth-child(2) {
+    transform: translateX(10px);
+    background-color: #00000075;
+}
+
+#hamburger.is-active span:nth-child(1) {
+    transform: translate(0px, -4px) rotate(45deg);
+}
+
+#hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(15px);
+}
+#hamburger.is-active span:nth-child(3) {
+    transform: translate(-2px, 2px) rotate(-45deg);
+}
+
+
+.menu {
+    display: none;
+    flex: 1 1 0%;
+    justify-content: space-around;
+}
+
+.menu a {
+    color: black;
+    
+    text-decoration: none;
+    transition: 0.4s;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+#overlay {
+    background: white;
+    visibility: hidden;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    text-align: end;
+    padding: 2rem;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 70px;
+    min-width: 210px;
+    box-shadow: 0px 0px 5px rgba(0,0, 0, 0.4);
+    z-index: 1;
+
+    
+    transition: 750ms ease-in-out;
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+#overlay.is-active {
+    transform: translateX(0);
+    opacity: 100%;
+    visibility: visible;
+}
+
+#overlay a.is-active {
+    transform: translateX(0);
+    visibility: visible;
+    transition: font-weight 250ms ease-in;
+}
+
+#overlay span {
+    visibility: hidden;
+    height: 4px;
+    width: 40px;
+    margin-bottom: 5px;
+    position: relative;
+    
+    background-color: var(--primary-blue);
+    z-index: 2;
+    transform-origin: center;
+    transform: scaleX(0%);
+    transition: 500ms ease-in;
+}
+
+#overlay span.is-active {
+    visibility: visible;
+    transform: scaleX(100%);
+    display: block;
+    transition-delay: 750ms;
+}
+
+#overlay a {
+    display: flex;
+    padding: 0.75rem;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 750ms ease-in;
+    transform: translateX(200%);
+    visibility: hidden;
+    transition: 500ms ease-in-out;
+}
+
+#overlay a:hover {
+    font-weight: bold;
+    transition: 250ms ease-in;
+}
+
+#overlay a p {
+    margin-right: 1rem;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.line {
+    height: 1px;
+    background: #00000010;
+    border: none;
+}
+
+
+.carrot {
+    margin-right: 1rem;
+    font-weight: 1000;
+    font-size: 24px;
+    color: var(--primary-blue);
+}
+
+
+@media screen and (min-width: 650px) {
+    .hamburger {
+        display: none;
+    }
+
+    .menu, .sign, .profile {
+        display: flex;
+    }
+    
+}
